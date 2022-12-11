@@ -1,0 +1,48 @@
+#' NanoString GeoMx Digital Spatial Profiler (DSP) data
+#'
+#' Data from Delorey et al. (GSE163530), which was used to investigate proteomics alterations due to SARS-CoV-2 infection.
+#' The data contains 330 ROIs, that are obtained from multiple locations of multiple patients. See the meta data Meta.DSP for more details.
+#'
+#' @docType data
+#'
+#' @usage data(COVID.19.DSP)
+#'
+#' @format An object of class \code{"list"}.
+#'
+#' @keywords datasets
+#'
+#' @references Delorey et al. (2021) Nature 2021 Jul;595(7865):107-113.
+#' (\href{https://www.ncbi.nlm.nih.gov/pubmed/33915569}{PubMed})
+#'
+#' @source \href{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163530}{GEO: GSE163530}
+#'
+#' @examples
+#' data(COVID.19.DSP)
+#'
+#' # raw DSP expression matrix, as an object of data.frame:
+#' data.raw <- COVID.19.DSP$Expr.raw.DSP
+#'
+#' # meta info of the 330 ROIs, as an object of data.frame:
+#' group.info <- COVID.19.DSP$Meta.DSP
+#'
+#' # normalized DSP expression matrix, as an object of list:
+#' # methods IDs range from 1 to 5 and 8 to 16,
+#' # as indicated by the list indices 1-5 and 8-16, respectively
+#' # the rest of methods are not applicable
+#' # due to absence of nuclei counts info in Delorey data
+#' data.normed.list <- COVID.19.DSP$Expr.normed.DSP
+#'
+#' # list of DSP data matrix of selected 39 highly-expressed proteins
+#' # that are normalized by the methods of 1-5 and 8-16,
+#' # as indicated by the list indices 1-5 and 8-16, respectively
+#' # the rest of methods are not applicable
+#' # due to absence of nuclei counts info in Delorey data:
+#' high.Expr.normed.DSP.matched.to.WTA <-
+#'    COVID.19.DSP$high.Expr.normed.DSP.matched.to.WTA
+#'
+#' # Q3-normalized WTA data matrix that has been matched to
+#' # the 324 ROIs and the 39 highly-expressed proteins (columns)
+#' # of the DSP data list above
+#' high.Expr.Q3normed.WTA <-
+#'    COVID.19.DSP$high.Expr.Q3normed.WTA
+"COVID.19.DSP"
